@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Download</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .image-card {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            overflow: hidden;
+            max-width: 300px;
+            cursor: pointer;
+            position: relative;
+        }
+        .image-card img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+        .image-card:hover img {
+            transform: scale(1.05);
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            padding-top: 100px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+        }
+        .modal-content {
+            margin: auto;
+            display: block;
+            max-width: 80%;
+            max-height: 80%;
+        }
+        .modal-content img {
+            width: 100%;
+            height: auto;
+            display: block;
+            margin: auto;
+        }
+        .close {
+            color: #fff;
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 30px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        .close:hover,
+        .close:focus {
+            color: #bbb;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .download-button {
+            display: block;
+            width: 100%;
+            text-align: center;
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+
+        .download-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Document Download</h1>
+    <section>
+        <h1>Sai Sohan</h1>
+        <div class="container">
+            <div class="image-card" onclick="openModal('WhatsApp Image 2024-05-05 at 19.59.28_4f92bd8a.jpg')">
+                <img src="WhatsApp Image 2024-05-05 at 19.59.28_4f92bd8a.jpg" alt="Bank Passbook">
+                <a href="WhatsApp Image 2024-05-05 at 19.59.28_4f92bd8a.jpg" class="download-button" download>Download Pan card</a>
+            </div>
+            <!-- <div class="image-card" onclick="openModal('21BD1A6613thanish.jpg')">
+                <img src="21BD1A6613thanish.jpg" alt="Passport Size Photo">
+                <a href="21BD1A6613thanish.jpg" class="download-button" download>Download Passport Photo</a>
+            </div>
+            <div class="image-card" onclick="openModal('WhatsApp Image 2022-03-20 at 11.53.26 AM.jpg')">
+                <img src="WhatsApp Image 2022-03-20 at 11.53.26 AM.jpg" alt="Signature Photo">
+                <a href="WhatsApp Image 2022-03-20 at 11.53.26 AM.jpg" class="download-button" download>Download Signature Photo</a>
+            </div>
+            <div class="image-card" onclick="openModal('resized_image.jpg')">
+                <img src="resized_image.jpg" alt="Aadhar Card Photo">
+                <a href="resized_image.jpg" class="download-button" download>Download Aadhar Card Photo</a>
+            </div> -->
+        </div>
+
+        <div id="myModal" class="modal">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <img class="modal-content" id="img01">
+        </div>
+    </section>
+
+    <!-- Resume Download Link -->
+    <div style="text-align: center; margin-top: 20px;">
+        <a href="address123.pdf" class="download-button" download>Download Aadhar card</a>
+    </div>
+    <div style="text-align: center; margin-top: 20px;">
+        <a href="Adobe Scan 06 Jan 2022.pdf" class="download-button" download>Download Bank PASSBOOK</a>
+    </div>
+    <div style="text-align: center; margin-top: 20px;">
+        <a href="Adobe Scan 12 Oct 2021.pdf" class="download-button" download>Download PASSPORT</a>
+    </div>
+
+    <script>
+        function openModal(imageSrc) {
+            var modal = document.getElementById('myModal');
+            var modalImg = document.getElementById("img01");
+            modal.style.display = "block";
+            modalImg.src = imageSrc;
+        }
+
+        function closeModal() {
+            var modal = document.getElementById('myModal');
+            modal.style.display = "none";
+        }
+    </script>
+</body>
+</html>
